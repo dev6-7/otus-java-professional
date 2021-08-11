@@ -1,0 +1,4 @@
+JMH S 18 ru.otus.JMHexample S 54 ru.otus.jmh_generated.JMHexample_ArrayListTest_jmhTest S 13 ArrayListTest S 14 SingleShotTime E A 1 1 1 E E E E E E E E E E E E E E U 12 MILLISECONDS E E 
+JMH S 18 ru.otus.JMHexample S 55 ru.otus.jmh_generated.JMHexample_myArrayIntTest_jmhTest S 14 myArrayIntTest S 14 SingleShotTime E A 1 1 1 E E E E E E E E E E E E E E U 12 MILLISECONDS E E 
+JMH S 14 ru.otus.JMHmap S 48 ru.otus.jmh_generated.JMHmap_hashMapTest_jmhTest S 11 hashMapTest S 14 SingleShotTime E A 1 1 1 E E E E E E E E E E E E E E U 12 MILLISECONDS E E 
+JMH S 14 ru.otus.JMHmap S 46 ru.otus.jmh_generated.JMHmap_myMapTest_jmhTest S 9 myMapTest S 14 SingleShotTime E A 1 1 1 E E E E E E E E E E E E E E U 12 MILLISECONDS E E 
