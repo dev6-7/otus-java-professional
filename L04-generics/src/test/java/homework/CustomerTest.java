@@ -14,7 +14,6 @@ class CustomerTest {
     // Все тесты должны проходить, менять тесты не надо.
 
     @Test
-    @Disabled //надо удалить
     @DisplayName("Объект Customer как ключ в карте")
     void customerAsKeyTest() {
         //given
@@ -42,7 +41,6 @@ class CustomerTest {
     }
 
     @Test
-    @Disabled //надо удалить
     @DisplayName("Сортировка по полю score, итерация по возрастанию")
     void scoreSortingTest() {
         //given
@@ -62,18 +60,20 @@ class CustomerTest {
 
         //when
         // подсказка:
-        // a key-value mapping associated with the least key strictly greater than the given key, or null if there is no such key.
+        // a key-value mapping associated with the least key strictly greater than the given key
         Map.Entry<Customer, String> middleScore = customerService.getNext(new Customer(10, "Key", 20));
-        //then
+        //then Customer(1, "Ivan", 233);
         assertThat(middleScore.getKey()).isEqualTo(customer1);
+
         middleScore.getKey().setScores(10000);
         middleScore.getKey().setName("Vasy");
 
         //when
         Map.Entry<Customer, String> biggestScore = customerService.getNext(customer1);
-        //then
+        //then Customer(3, "Pavel", 888);
         assertThat(biggestScore.getKey()).isEqualTo(customer3);
 
+        //or null if there is no such key.
         //when
         Map.Entry<Customer, String> notExists = customerService.getNext(new Customer(100, "Not exists", 20000));
         //then
@@ -82,7 +82,6 @@ class CustomerTest {
     }
 
     @Test
-    @Disabled //надо удалить
     @DisplayName("Модификация коллекции")
     void mutationTest() {
         //given
@@ -104,7 +103,6 @@ class CustomerTest {
     }
 
     @Test
-    @Disabled //надо удалить
     @DisplayName("Возвращание в обратном порядке")
     void reverseOrderTest() {
         //given

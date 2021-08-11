@@ -1,6 +1,8 @@
 package homework;
 
-public class Customer {
+import java.util.Objects;
+
+public class Customer implements Cloneable{
     private final long id;
     private String name;
     private long scores;
@@ -46,19 +48,16 @@ public class Customer {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Customer customer = (Customer) o;
-
-        if (id != customer.id) return false;
-        if (scores != customer.scores) return false;
-        return name != null ? name.equals(customer.name) : customer.name == null;
+        return id == customer.id;
     }
 
     @Override
     public int hashCode() {
-        int result = (int) (id ^ (id >>> 32));
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (int) (scores ^ (scores >>> 32));
-        return result;
+        return Objects.hash(id);
+    }
+
+    public Customer clone(){
+        return  new Customer(id, name, scores);
     }
 }
